@@ -1,0 +1,21 @@
+{
+  "name": "Bytebank-js",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido utilizando o JavaScript como principal linguagem e utilizando conhecimentos adquiridos com o Alura Cursos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crsgustav0/Bytebank-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/crsgustav0/Bytebank-js/issues"
+  },
+  "homepage": "https://github.com/crsgustav0/Bytebank-js#readme"
+}
