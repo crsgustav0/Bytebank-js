@@ -2,6 +2,8 @@ import { Cliente } from "./Cliente.js";
 
 //export  - Torna a classe acessível a outros diretorios do projeto
 export class ContaCorrente {
+
+    static numeroContas = 0
     agencia;
 
     // _variavel - Indica o campo privado da classe
@@ -41,6 +43,10 @@ export class ContaCorrente {
     constructor(agencia, cliente) {
         this.cliente = cliente
         this.agencia = agencia
+
+        /*Referente a contabilização total da criação de contas, não somente a 
+        sua instância no momento de sua criação*/
+        ContaCorrente.numeroContas += 1
     }
 
     /*Definição de função, método da classe*/
