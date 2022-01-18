@@ -22,6 +22,11 @@ const segundaContaCorrente = new ContaCorrente(1002, segundoCliente)
 //primeiraContaCorrente.transferir(valor, segundaContaCorrente)
 
 //segundaContaCorrente.saldo = 30000;
-console.log(primeiroCliente)
-console.log(segundoCliente)
-//console.log(segundaContaCorrente);
+//console.log(primeiroCliente)
+//console.log(primeiraContaCorrente)
+//console.log(segundoCliente)
+//console.log(segundaContaCorrente)
+
+//Por se tratar de um campo estático, é necessário 
+// chamar a classe e seu componente diretamente
+console.log(`Número de contas: ${ContaCorrente.numeroContas}`)
