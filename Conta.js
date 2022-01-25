@@ -1,5 +1,6 @@
-export class Conta { 
-     //Criação construtor classe, definição modelo de instância
+export class Conta {
+
+    //Criação construtor classe, definição modelo de instância
     constructor(saldoInicial, cliente, agencia) {
         /*Inicializa as propriedades da classe com 
         os valores passados via parâmetros*/
@@ -8,8 +9,41 @@ export class Conta {
         this._agencia = agencia
     }
 
+    //Usado sem o '_' por se referenciar a sua chamada de outra classe
+    set cliente(novoValor) {
+        /*
+        Valida o objeto que chama a função, limitando seu acesso somente 
+        a sua classe sem 'Cliente', acessando o campo privado 
+        da classe 'ContaCorrente'
+        */
+        if (novoValor instanceof Cliente) {
+            /*
+            Atribui ao campo privado da classe o valor recebido
+            via parâmetro
+            */
+            this._cliente = novoValor
+        }
+    }
+
+    //Usado sem o '_' por se referenciar a sua chamada de outra classe
+    get cliente() {
+        /*
+        Atribui ao campo privado da classe o valor recebido via parâmetro
+        */
+        return this._cliente
+    }
+
+    //Usado sem o '_' por se referenciar a sua chamada de outra classe
+    get saldo() {
+        return this._saldo
+    }
+
     /*Definição de função, método da classe*/
     sacar(valor) {//Saque
+
+        let taxa = 1
+        const valorSacado = taxa * valor
+
         /*this.propriedade, refere-se a conta informada*/
         if (this._saldo <= valor) {
             console.log('Saldo insuficiente')
@@ -18,12 +52,12 @@ export class Conta {
             return;
         }
 
-        this._saldo -= valor
+        this._saldo -= valorSacado
 
         console.log(`Valor sacado ${valor}`, `Saldo atual ${this._saldo}`)
 
         /*Retorna o vaor sacado*/
-        return valor
+        return valorSacado
     }
 
     depositar(valor) {//Deposito
