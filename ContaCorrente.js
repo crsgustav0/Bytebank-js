@@ -4,11 +4,6 @@ import { Cliente } from "./Cliente.js";
 export class ContaCorrente {
 
     static numeroContas = 0
-    agencia;
-
-    // _variavel - Indica o campo privado da classe
-    _cliente;
-    _saldo = 0;
 
     //Usado sem o '_' por se referenciar a sua chamada de outra classe
     set cliente(novoValor) {
@@ -43,57 +38,13 @@ export class ContaCorrente {
     constructor(agencia, cliente) {
         this.cliente = cliente
         this.agencia = agencia
+        this._saldo = 0
 
         /*Referente a contabilização total da criação de contas, não somente a 
         sua instância no momento de sua criação*/
         ContaCorrente.numeroContas += 1
     }
 
-    /*Definição de função, método da classe*/
-    sacar(valor) {//Saque
-        /*this.propriedade, refere-se a conta informada*/
-        if (this._saldo <= valor) {
-            console.log('Saldo insuficiente')
 
-            /*Finaliza a execução da função via validação*/
-            return;
-        }
-
-        this._saldo -= valor
-
-        console.log(`Valor sacado ${valor}`, `Saldo atual ${this._saldo}`)
-
-        /*Retorna o vaor sacado*/
-        return valor
-    }
-
-    depositar(valor) {//Deposito
-        if (valor <= 0) {
-            console.log('Valor incorreto')
-
-            /*Finaliza a execução da função via validação*/
-            return;
-        }
-
-        /*this.propriedade, refere-se a conta informada*/
-        this._saldo += valor
-
-        console.log(`Valor depositado ${valor}`, `Saldo atual ${this._saldo}`)
-    }
-
-    transferir(valor, conta) {
-        if (valor <= 0) {
-            console.log('Valor incorreto')
-
-            /*Finaliza a execução da função via validação*/
-            return;
-        }
-
-        /*Chamada de função interna da classe*/
-        const valorSacado = this.sacar(valor);
-
-        conta.depositar(valorSacado);
-
-    }
 }
 
