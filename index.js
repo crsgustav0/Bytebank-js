@@ -9,7 +9,7 @@ var agencia = 1001
 const primeiroCliente = new Cliente("Cristian", 11122233309)
 
 /*Criação ContaCorrente*/
-const primeiraContaCorrente = new Conta(1001, primeiroCliente, agencia)
+const primeiraContaCorrente = new ContaCorrente(1001, primeiroCliente, agencia)
 
 /*Deposito*/
 primeiraContaCorrente.depositar(500)
@@ -26,7 +26,7 @@ primeiraContaCorrente.sacar(50)
 //console.log(primeiroCliente)
 //console.log(primeiraContaCorrente)
 
-const contaPoupanca = new Conta(50, primeiroCliente, agencia)
+const contaPoupanca = new ContaPoupanca(50, primeiroCliente, agencia)
 
 console.log(contaPoupanca)
 console.log(primeiraContaCorrente)
