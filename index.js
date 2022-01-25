@@ -1,22 +1,23 @@
 import { Cliente } from './Cliente.js'
 import { ContaCorrente } from './ContaCorrente.js'
+import { ContaPoupanca } from './ContaPoupanca.js'
+import { Conta } from './Conta.js'
+
+var agencia = 1001
 
 /*Criação Conta Cliete*/
-const primeiroCliente = new Cliente("Cristian", 11122233309);
-
-/*Criação Conta Cliete*/
-const segundoCliente = new Cliente("Gustavo", 88822233309);
+const primeiroCliente = new Cliente("Cristian", 11122233309)
 
 /*Criação ContaCorrente*/
-const primeiraContaCorrente = new ContaCorrente(1001, primeiroCliente);
+const primeiraContaCorrente = new Conta(1001, primeiroCliente, agencia)
 
 /*Deposito*/
-//primeiraContaCorrente.depositar(500)
+primeiraContaCorrente.depositar(500)
 /*Saque*/
-//primeiraContaCorrente.sacar(50)
+primeiraContaCorrente.sacar(50)
 
 /*Criação ContaCorrente*/
-const segundaContaCorrente = new ContaCorrente(1002, segundoCliente)
+//const segundaContaCorrente = new ContaCorrente(1002, segundoCliente)
 
 //let valor = 200;
 //primeiraContaCorrente.transferir(valor, segundaContaCorrente)
@@ -24,9 +25,8 @@ const segundaContaCorrente = new ContaCorrente(1002, segundoCliente)
 //segundaContaCorrente.saldo = 30000;
 //console.log(primeiroCliente)
 //console.log(primeiraContaCorrente)
-//console.log(segundoCliente)
-//console.log(segundaContaCorrente)
 
-//Por se tratar de um campo estático, é necessário 
-// chamar a classe e seu componente diretamente
-console.log(`Número de contas: ${ContaCorrente.numeroContas}`)
+const contaPoupanca = new Conta(50, primeiroCliente, agencia)
+
+console.log(contaPoupanca)
+console.log(primeiraContaCorrente)
