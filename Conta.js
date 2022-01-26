@@ -1,3 +1,4 @@
+// Conta - Classe abstrata, que não pode ser instânciada diretamente somente herdada
 export class Conta {
 
     //Criação construtor classe, definição modelo de instância
@@ -7,6 +8,11 @@ export class Conta {
         this._saldo = saldoInicial
         this._cliente = cliente
         this._agencia = agencia
+
+        // this.constructor - Retorna a origem da instância da classe Conta
+        if (this.constructor == Conta) {
+            throw new Error('Não é permitir instânciar diretamente um objeto do tipo Conta, por se tratar de uma classe abstrata')
+        }
     }
 
     //Usado sem o '_' por se referenciar a sua chamada de outra classe
