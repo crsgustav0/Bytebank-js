@@ -12,5 +12,14 @@ export class Funcionario {
 
         // Criação campo privado 'bonificacao'
         this._bonificacao = 1
+        this._senha
+    }
+
+    getSenha() {
+        return this._senha
+    }
+
+    cadastrarSenha(senha) {
+        this._senha = senha
     }
 }
