@@ -20,4 +20,27 @@ export class ContaCorrente extends Conta {
         ContaCorrente.numeroContas += 1
     }
 
+    /*Definição de função, método da classe*/
+    sacar(valor) {//Saque
+
+        let taxa = 1.1
+        const valorSacado = taxa * valor
+
+        /*this.propriedade, refere-se a conta informada*/
+        if (this._saldo <= valor) {
+            console.log('Saldo insuficiente')
+
+            /*Finaliza a execução da função via validação*/
+            return;
+        }
+
+        this._saldo -= valorSacado
+
+        console.log(`Valor sacado ${valor}`, `Saldo atual ${this._saldo}`)
+
+        /*Retorna o vaor sacado*/
+        return valorSacado
+    }
+
+
 }
