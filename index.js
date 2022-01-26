@@ -26,6 +26,8 @@ const primeiraContaCorrente = new ContaCorrente(1001, primeiroCliente, agencia)
 //console.log(primeiroCliente)
 //console.log(primeiraContaCorrente)
 
+
+/*Criação ContaPoupança*/
 //const contaPoupanca = new ContaPoupanca(50, primeiroCliente, agencia)
 //contaPoupanca.sacar(10)
 
