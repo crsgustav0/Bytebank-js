@@ -1,4 +1,3 @@
-import { Cliente } from "./Cliente.js";
 import { Conta } from "./Conta.js";
 
 //  export  - Torna a classe acessível a outros diretorios do projeto
@@ -20,26 +19,13 @@ export class ContaCorrente extends Conta {
         ContaCorrente.numeroContas += 1
     }
 
+    //Sobreescrevendo o comportamento da função 'sacar' da classe mãe 'Conta'
     /*Definição de função, método da classe*/
     sacar(valor) {//Saque
 
         let taxa = 1.1
-        const valorSacado = taxa * valor
-
-        /*this.propriedade, refere-se a conta informada*/
-        if (this._saldo <= valor) {
-            console.log('Saldo insuficiente')
-
-            /*Finaliza a execução da função via validação*/
-            return;
-        }
-
-        this._saldo -= valorSacado
-
-        console.log(`Valor sacado ${valor}`, `Saldo atual ${this._saldo}`)
-
-        /*Retorna o vaor sacado*/
-        return valorSacado
+        //  Chamada método privado, necessário utilizar o 'super.' para referência da classe Conta
+        return super._sacar(valor, taxa)
     }
 
 
