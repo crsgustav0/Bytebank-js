@@ -13,4 +13,13 @@ export class ContaPoupanca extends Conta {
         super(saldoInicial, cliente, agencia)
     }
 
+    //Sobreescrevendo o comportamento da função 'sacar' da classe mãe 'Conta'
+    /*Definição de função, método da classe*/
+    sacar(valor) {
+    
+        let taxa = 1.02
+        //  Chamada método privado, necessário utilizar o 'super.' para referência da classe Conta
+        return this._sacar(valor, taxa)
+    }
+
 }
