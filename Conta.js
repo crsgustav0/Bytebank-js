@@ -40,8 +40,13 @@ export class Conta {
 
     /*Definição de função, método da classe*/
     sacar(valor) {//Saque
-
         let taxa = 1
+        //  Chamada método privado, necessário utilizar o 'this.' para referência da mesma classe de sua chamada
+        return this._sacar(valor, taxa)
+    }
+
+    // '_'  - Usado para referencia a criação de um método privado da classe 'Conta'
+    _sacar(valor, taxa) {
         const valorSacado = taxa * valor
 
         /*this.propriedade, refere-se a conta informada*/
@@ -49,7 +54,7 @@ export class Conta {
             console.log('Saldo insuficiente')
 
             /*Finaliza a execução da função via validação*/
-            return;
+            return 0;
         }
 
         this._saldo -= valorSacado
