@@ -27,6 +27,7 @@ primeiraContaCorrente.sacar(50)
 //console.log(primeiraContaCorrente)
 
 const contaPoupanca = new ContaPoupanca(50, primeiroCliente, agencia)
+contaPoupanca.sacar(10)
 
 console.log(contaPoupanca)
 console.log(primeiraContaCorrente)
