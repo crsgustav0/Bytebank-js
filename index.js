@@ -1,14 +1,15 @@
 import { Cliente } from './Cliente.js'
-import { ContaCorrente } from './Conta/ContaCorrente.js'
-import { ContaSalario } from './Conta/ContaSalario.js'
+import { Gerente } from './Funcionarios/Gerente.js'
+import { Diretor } from './Funcionarios/Diretor.js'
+import { SistemaAutenticacao } from './SistemaAutenticacao.js'
 
-var agencia = 1001
+//var agencia = 1001
 
 /*Criação Conta Cliete*/
-const primeiroCliente = new Cliente("Cristian", 11122233309)
+//const primeiroCliente = new Cliente("Cristian", 11122233309)
 
 /*Criação ContaCorrente*/
-const primeiraContaCorrente = new ContaCorrente(1001, primeiroCliente, agencia)
+//const primeiraContaCorrente = new ContaCorrente(1001, primeiroCliente, agencia)
 
 /*Deposito*/
 //primeiraContaCorrente.depositar(500)
@@ -30,8 +31,19 @@ const primeiraContaCorrente = new ContaCorrente(1001, primeiroCliente, agencia)
 //const contaPoupanca = new ContaPoupanca(50, primeiroCliente, agencia)
 //contaPoupanca.sacar(10)
 
-const contaSalario = new ContaSalario(primeiroCliente)
-contaSalario.depositar(100)
-contaSalario.sacar(10)
+//const contaSalario = new ContaSalario(primeiroCliente)
+//contaSalario.depositar(100)
+//contaSalario.sacar(10)
 //console.log(contaPoupanca)
 //console.log(primeiraContaCorrente)
+
+
+const diretor = new Diretor('Cristian', 10000, 12345678900)
+diretor.cadastrarSenha('123')
+const gerente = new Gerente('Gustavo', 5000, 45645678900)
+gerente.cadastrarSenha('123')
+
+const loginDiretor = SistemaAutenticacao.login(diretor, '123')
+const loginGerente = SistemaAutenticacao.login(gerente, '123')
+console.log(loginDiretor)
+console.log(loginGerente)
