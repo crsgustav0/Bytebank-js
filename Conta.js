@@ -44,11 +44,13 @@ export class Conta {
         return this._saldo
     }
 
+    /* 
+        sacar(valor) - Método abstrato que não pode ser instânciado diretamente, 
+        somente sobrescrito 
+        */
     /*Definição de função, método da classe*/
     sacar(valor) {//Saque
-        let taxa = 1
-        //  Chamada método privado, necessário utilizar o 'this.' para referência da mesma classe de sua chamada
-        return this._sacar(valor, taxa)
+        throw new Error(`Não é permitido instânciar diretamente o método 'sacar' da classe Conta, por se tratar de uma função abstrata `)
     }
 
     // '_'  - Usado para referencia a criação de um método privado da classe 'Conta'
