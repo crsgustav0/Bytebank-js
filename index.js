@@ -1,6 +1,6 @@
 import { Cliente } from './Cliente.js'
-import { ContaCorrente } from './ContaCorrente.js'
-import { ContaSalario } from './ContaSalario.js'
+import { ContaCorrente } from './Conta/ContaCorrente.js'
+import { ContaSalario } from './Conta/ContaSalario.js'
 
 var agencia = 1001
 
