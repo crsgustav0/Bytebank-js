@@ -1,49 +1,16 @@
 import { Cliente } from './Cliente.js'
-import { Gerente } from './Funcionarios/Gerente.js'
 import { Diretor } from './Funcionarios/Diretor.js'
-import { SistemaAutenticacao } from './SistemaAutenticacao.js'
+import { Gerente } from './Funcionarios/Gerente.js'
+import { AuthSystem } from './Auth/AuthSystem.js'
 
-//var agencia = 1001
+const diretor = new Diretor('Cristian', 10000, 12345678958)
+diretor.cadastrarSenha('123456')
 
-/*Criação Conta Cliete*/
-//const primeiroCliente = new Cliente("Cristian", 11122233309)
+const gerente = new Gerente('Gustavo', 500, 12345678941)
+gerente.cadastrarSenha('123456')
 
-/*Criação ContaCorrente*/
-//const primeiraContaCorrente = new ContaCorrente(1001, primeiroCliente, agencia)
+const authDiretor = AuthSystem.login(diretor, '123456')
+console.log(`Diretor: ${diretor.nome} Autenticação: ${authDiretor}`)
 
-/*Deposito*/
-//primeiraContaCorrente.depositar(500)
-/*Saque*/
-//primeiraContaCorrente.sacar(50)
-
-/*Criação ContaCorrente*/
-//const segundaContaCorrente = new ContaCorrente(1002, segundoCliente)
-
-//let valor = 200;
-//primeiraContaCorrente.transferir(valor, segundaContaCorrente)
-
-//segundaContaCorrente.saldo = 30000;
-//console.log(primeiroCliente)
-//console.log(primeiraContaCorrente)
-
-
-/*Criação ContaPoupança*/
-//const contaPoupanca = new ContaPoupanca(50, primeiroCliente, agencia)
-//contaPoupanca.sacar(10)
-
-//const contaSalario = new ContaSalario(primeiroCliente)
-//contaSalario.depositar(100)
-//contaSalario.sacar(10)
-//console.log(contaPoupanca)
-//console.log(primeiraContaCorrente)
-
-
-const diretor = new Diretor('Cristian', 10000, 12345678900)
-diretor.cadastrarSenha('123')
-const gerente = new Gerente('Gustavo', 5000, 45645678900)
-gerente.cadastrarSenha('123')
-
-const loginDiretor = SistemaAutenticacao.login(diretor, '123')
-const loginGerente = SistemaAutenticacao.login(gerente, '123')
-console.log(loginDiretor)
-console.log(loginGerente)
+const authGerente = AuthSystem.login(gerente, '123456')
+console.log(`Gerente: ${gerente.nome} Autenticação: ${authGerente}`)
