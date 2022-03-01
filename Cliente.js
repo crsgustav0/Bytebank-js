@@ -16,8 +16,14 @@ export class Cliente {
   }
 
   //Criação construtor classe, indica que para criar o objeto os parâmetros devem ser informados 
-  constructor(nome, cpf) {
+  constructor(nome, cpf, senha) {
     this.nome = nome
     this._cpf = cpf
+    this._senha = senha
+    this.autenticar = 1
+  }
+
+  autenticar() {
+    return true;
   }
 }
